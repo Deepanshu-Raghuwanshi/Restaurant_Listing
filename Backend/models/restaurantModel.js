@@ -18,4 +18,11 @@ const restaurants = sequelize.define("restaurant", {
   image: DataTypes.TEXT,
 });
 
-module.exports = { restaurants, sequelize };
+const user = sequelize.define("users", {
+  name: DataTypes.TEXT,
+  username: DataTypes.TEXT,
+  password: DataTypes.TEXT,
+  mobile: DataTypes.INTEGER,
+});
+
+module.exports = { restaurants, sequelize, user };

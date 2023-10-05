@@ -36,14 +36,7 @@ const navigate = useNavigate()
       alert('Enter Valid 10 Digit Mobile Number')
     }
           
-     const data = {
-      name: name1,
-      username: username1,
-      password: password1,
-      mobile: mobile1,
-    }
-    
-
+        
  axios.post('http://localhost:8080/user', {
       name: `${name1}`,
       username: `${username1}`,

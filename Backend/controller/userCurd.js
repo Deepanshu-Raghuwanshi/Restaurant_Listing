@@ -1,7 +1,6 @@
 const { user } = require("../models/restaurantModel");
 
 const save = (data) => {
-  console.log("from save");
   return user.create(data);
 };
 
@@ -25,9 +24,18 @@ const deletee = (id) => {
   });
 };
 
+const getByUsername = (username) => {
+  return user.findOne({
+    where: {
+      username: username,
+    },
+  });
+};
+
 module.exports = {
   save,
   get,
   edit,
   deletee,
+  getByUsername,
 };

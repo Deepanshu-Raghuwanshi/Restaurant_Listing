@@ -1,7 +1,14 @@
 const express = require("express");
 const encryptPassword = require("../middleware/passEncryption");
 const router = express.Router();
-const { save, get, edit, deletee } = require("../controller/userCurd");
+const Login = require("../controller/userAuth");
+const {
+  save,
+  get,
+  edit,
+  deletee,
+  getByUsername,
+} = require("../controller/userCurd");
 
 router.get("/", async (req, res) => {
   const data = await get();
@@ -15,6 +22,8 @@ router.post("/", encryptPassword, async (req, res) => {
     data: data,
   });
 });
+
+router.post("/login", Login);
 
 router.put("/:id", async (req, res) => {
   req.body.id = req.params.id;

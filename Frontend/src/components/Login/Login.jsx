@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
 const Login =  () =>{
 
 const navigate = useNavigate()
@@ -22,7 +22,15 @@ const siginpHandler = ()=>{
     } else if (password1.length == 0) {
       alert('Enter Valid Password')
     } 
-                
+          axios.post('http://localhost:8080/user/login', {
+            username: `${username1}`,
+      password: `${password1}`,
+          }).then((data)=>{
+           alert(data.data.message)
+      navigate('/login')
+    }).catch((error)=>{
+      console.log(error)
+    })       
     setUserName('')
     setPassword('')
     

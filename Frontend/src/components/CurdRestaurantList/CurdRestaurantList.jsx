@@ -42,7 +42,7 @@ const deleteHandler = (id)=>{
           }else{
             alert('Error try again later')
           }
-                               }).catch((error)=>{
+             }).catch((error)=>{
       console.log(error)
     })
 
@@ -64,9 +64,16 @@ const resHandler = (id)=>{
       <div className={styles.reslist}>
         {restaurant.map(res => (
           <div onClick={()=>{resHandler(res.id)}} key={res.id} className={styles.res}>
-              <h4>{res.name}</h4>
+              <h4>Name : {res.name}</h4>
+              <hr/>
+               <h4>Address : {res.address}</h4>
+                <hr/>
+                <h4>Mobile No. :  {res.mobile}</h4>
+                 <hr/>
+                 <h4> Email : {res.email}</h4>
+                  <hr/>
             <br/>
-                       <hr/>
+                       
             <img  style={{ maxHeight: "400px" }} src={res.image} alt={res.name} />
                  <br/>
                    <Button className="me-2 mt-2" onClick={()=>{editHandler(res.id)}} >Edit Restaurant </Button>

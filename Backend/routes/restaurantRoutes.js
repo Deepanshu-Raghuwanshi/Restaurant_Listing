@@ -14,9 +14,8 @@ router.get("/", async (req, res) => {
   res.json({ data: data });
 });
 
-router.get("/getDataById", async (req, res) => {
+router.post("/getDataById", async (req, res) => {
   let id = req.body.id;
-  console.log(id, "from routes");
   const data = await getDataById(id);
   res.json({ data: data });
 });
@@ -26,6 +25,16 @@ router.post("/", async (req, res) => {
   res.json({
     message: "sucess",
     data: data,
+  });
+});
+
+router.post("/edit", async (req, res) => {
+  let data = req.body;
+  console.log(data);
+  let data1 = await edit(data);
+  res.json({
+    message: "sucess",
+    data: data1,
   });
 });
 

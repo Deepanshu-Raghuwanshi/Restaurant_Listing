@@ -7,5 +7,6 @@
   "CONTACTUS":"contactus",
   "ADDRESTAURANT":"addrestaurant",
   "CURDRESTAURANTLIST":"curdrestaurantlist",
-  "EDITRESTAURANT":"editrestaurant"
+  "EDITRESTAURANT":"editrestaurant",
+  "DISHES":"dishes"
 }

@@ -14,7 +14,11 @@ const restaurants = sequelize.define("restaurant", {
   address: DataTypes.TEXT,
   email: DataTypes.TEXT,
   mobile: DataTypes.INTEGER,
-  dishes: DataTypes.TEXT,
+  // dishes: DataTypes.ARRAY,
+  dishes: {
+    type: DataTypes.JSONB,
+    defaultValue: [],
+  },
   image: DataTypes.TEXT,
 });
 

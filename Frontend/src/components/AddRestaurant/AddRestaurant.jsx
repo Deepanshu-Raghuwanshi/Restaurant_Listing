@@ -18,23 +18,9 @@ const navigate = useNavigate()
  const[isDish,setIsDish]=useState(false)
  const [dishname, setDishName] = useState('');
   const [dishprice, setDishPrice] = useState('');
-  const [dishes, setDishes] = useState([]);
+  const [dishes, setDishes] = useState('');
  
     
-
-
-//   useEffect(() => {
-//     axios.get('https://ticket-booking-dipanshuraghuwa.december-node-2022.repl.co/movie/imagedata').then((data) => {
-
-//       setMovie(data.data.data)
-
-//     }).catch((error) => {
-//       console.log(error)
-//     })
-//   }, [delete1])
-
-
-
   const addHandler = () => {
     const name1 = name.trim(' ')
     const address1 = address.trim(' ')
@@ -63,7 +49,7 @@ axios.post('http://localhost:8080/restaurant', {
       email: `${email1}`,
       mobile: `${mobile1}`,
       image:`${poster1}`,
-      dishes:`${dishes}`,
+      dishes:dishes,
  
     }).then((data)=>{
      console.log(data)
@@ -83,6 +69,7 @@ axios.post('http://localhost:8080/restaurant', {
     setMobile('')
     setEmail('')
    setPoster('')
+   setDishes([])
 
   
     }
@@ -116,7 +103,7 @@ setIsDish(!isDish)
 const listgoHandler = ()=>{
    navigate('/curdrestaurantlist')
 }
-
+console.log(dishes)
 
   return (<>
     <br />

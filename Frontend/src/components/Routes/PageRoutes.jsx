@@ -9,6 +9,7 @@ import ContactUs from '../ContactUs/ContactUs';
 import AddRestaurant from '../AddRestaurant/AddRestaurant';
 import CurdRestaurantList from '../CurdRestaurantList/CurdRestaurantList';
 import EditRestaurant from '../EditRestaurant/EditRestaurant';
+import Dishes from '../Dishes/Dishes';
 
 
 const PageRoutes = () => {
@@ -24,7 +25,8 @@ const PageRoutes = () => {
           <Route path={routes.CONTACTUS} element={<ContactUs />} />
           <Route path={routes.ADDRESTAURANT} element={<AddRestaurant />} />
         <Route path={routes.CURDRESTAURANTLIST} element={<CurdRestaurantList />} />
-         <Route path={routes.EDITRESTAURANT} element={<EditRestaurant />} />
+         <Route path={routes.DISHES} element={<Dishes />} />
+           <Route path={routes.EDITRESTAURANT} element={<EditRestaurant />} />
         
         
            </Route>

@@ -5,7 +5,8 @@ import Button from 'react-bootstrap/Button';
 import styles from './CurdRestaurantList.module.css'
 import routes from '../Routes/routes.json'
 import { useDispatch } from "react-redux";
-import { addId } from "../../Reducers/UserSlice";
+import { addId,addDishId } from "../../Reducers/UserSlice";
+
 const CurdRestaurantList = ()=>{
 
 const [restaurant,setRestaurant] = useState([])
@@ -50,11 +51,12 @@ const deleteHandler = (id)=>{
 
 const editHandler=(id)=>{
   dispatch(addId(id))
-   navigate("/editrestaurant");
+    navigate("/editrestaurant");
 }
 
 const resHandler = (id)=>{
-  console.log(id)
+   dispatch(addDishId(id))
+   navigate("/dishes");
 }
     return(<>
    

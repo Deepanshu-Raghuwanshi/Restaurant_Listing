@@ -1,10 +1,23 @@
 const express = require("express");
 
 const router = express.Router();
-const { save, get, edit, deletee } = require("../controller/restaurantCurd");
+const {
+  save,
+  get,
+  edit,
+  deletee,
+  getDataById,
+} = require("../controller/restaurantCurd");
 
 router.get("/", async (req, res) => {
   const data = await get();
+  res.json({ data: data });
+});
+
+router.get("/getDataById", async (req, res) => {
+  let id = req.body.id;
+  console.log(id, "from routes");
+  const data = await getDataById(id);
   res.json({ data: data });
 });
 
@@ -25,8 +38,9 @@ router.put("/:id", async (req, res) => {
   });
 });
 
-router.delete("/:id", async (req, res) => {
-  let id = req.params.id;
+router.post("/delete", async (req, res) => {
+  let id = req.body.id;
+
   let toDelete = await deletee(id);
   res.json({
     message: "sucess",

@@ -32,7 +32,7 @@ navigate('/login')
       <h2>  Listed Restaurant</h2>
       <div className={styles.reslist}>
         {restaurant.map(res => (
-          <div onClick={()=>{resHandler(res.id)}} key={res.id} className={styles.res}>
+          <div  key={res.id} className={styles.res}>
               <h4>{res.name}</h4>
             <br/>
             <hr/>

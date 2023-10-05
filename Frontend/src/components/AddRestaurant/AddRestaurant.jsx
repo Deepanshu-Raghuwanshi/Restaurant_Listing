@@ -2,12 +2,13 @@ import { useState, useRef, useEffect } from "react";
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import styles from './AddRestaurant.module.css'
+import { useNavigate } from "react-router-dom";
 
 
 
 const AddRestaurant = () => {
 
-  const posterInputRef = useRef(null);
+const navigate = useNavigate()
 
   const [name, setName] = useState('')
   const [address, setAddress] = useState('')
@@ -66,14 +67,13 @@ axios.post('http://localhost:8080/restaurant', {
  
     }).then((data)=>{
      console.log(data)
-     if(data.data.message==sucess){
+     if(data.data.message=="sucess"){
            alert("Restaurant Data Added Sucessfully")
-           //   navigate('/login')
+           
      }else{
         alert('Failed Try Again')
      }
-    //   alert(data.data.message)
-    //   navigate('/login')
+   
     }).catch((error)=>{
       console.log(error)
     })
@@ -84,25 +84,11 @@ axios.post('http://localhost:8080/restaurant', {
     setEmail('')
    setPoster('')
 
-
-
   
     }
   }
 
-  const deleteHandler = (id) => {
-   
-    const data = {
-      id: id,
-    }
-    // axios.post('https://ticket-booking-dipanshuraghuwa.december-node-2022.repl.co/movie/delete', data, { headers: { "Content-Type": 'application/json', } }).then((data) => {
-
-    //   alert(data.data.message)
-    //   setDelete1(!delete1)
-    // }).catch((error) => {
-    //   console.log(error)
-    // })
-  }
+ 
 
 const dishHandler = ()=>{
 setIsDish(!isDish)
@@ -126,7 +112,12 @@ setIsDish(!isDish)
     setDishPrice('');
     
   };
-console.log(dishes)
+
+const listgoHandler = ()=>{
+   navigate('/curdrestaurantlist')
+}
+
+
   return (<>
     <br />
     
@@ -225,6 +216,7 @@ console.log(dishes)
         />
       </div>
       <Button variant='success' onClick={addDish}>Add Dish</Button>
+      <hr/>
 </>
 ) : (
    
@@ -232,12 +224,15 @@ console.log(dishes)
     <button  onClick={dishHandler} className="btn btn-primary">
       Add Dish
     </button>
+    <hr/>
   </div>
 )}
 <br/>
 <br/>
-                 <div className="d-grid">
-                    <Button onClick={addHandler}  variant="info"  >Add Restaurant</Button>
+         <div className="d-grid">
+     <Button onClick={addHandler}  variant="warning"  >Add Restaurant</Button>
+     <br/>
+      <Button onClick={listgoHandler}  variant="info"  >Go To Restaurant Lists</Button>
                   </div>
                 </div>
               </div>

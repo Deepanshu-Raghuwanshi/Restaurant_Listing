@@ -24,9 +24,16 @@ const deletee = (id) => {
   });
 };
 
+const getDataById = (id) => {
+  console.log(id, "fromrescurd");
+  return restaurants.findOne({
+    where: { id: id },
+  });
+};
 module.exports = {
   save,
   get,
   edit,
   deletee,
+  getDataById,
 };

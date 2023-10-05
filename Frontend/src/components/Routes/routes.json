@@ -5,5 +5,7 @@
   "MOVIES":"movies",
   "RESTAURANTLIST":"restaurantlist",
   "CONTACTUS":"contactus",
-  "ADDRESTAURANT":"addrestaurant"
+  "ADDRESTAURANT":"addrestaurant",
+  "CURDRESTAURANTLIST":"curdrestaurantlist",
+  "EDITRESTAURANT":"editrestaurant"
 }

@@ -4,7 +4,28 @@ import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import styles from './Header.module.css'
 import routes from '../Routes/routes.json'
+import { useState,useEffect } from 'react';
+import {  useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 const Header = ()=>{
+
+  const [username,setUserName] = useState('')
+
+  const navigate = useNavigate()
+
+   const user = useSelector((state) => {
+       return (state.user.Uname)
+  })
+
+  useEffect(()=>{
+         setUserName(user)
+  },[user])
+
+
+const logoutHandler = ()=>{
+  setUserName('')
+    navigate('/')
+}
 
     
   return(<>
@@ -34,13 +55,37 @@ const Header = ()=>{
           </Nav> 
            
 
-      <Navbar.Collapse className="justify-content-end">
+      
+
+  {!username && (
+       <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
             User Signup/Login : 
             <a href="/signup">Here</a>
           </Navbar.Text>
-        </Navbar.Collapse> 
+        </Navbar.Collapse>  
+        
+        )
+         
+        }
+         {username && (
+      <Navbar.Collapse className="justify-content-end">
+          <Navbar.Text>
+            User :  {username} || 
+          </Navbar.Text>
        
+         <Navbar.Text>
+          
+           <Button onClick={logoutHandler} variant="danger">Logout</Button>
+          </Navbar.Text>
+        </Navbar.Collapse> 
+        )
+          
+        } 
+
+
+
+
        
         </Container>
       </Navbar>

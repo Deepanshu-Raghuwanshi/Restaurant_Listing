@@ -1,9 +1,19 @@
 import Button from "react-bootstrap/esm/Button";
 import Header from "../Header/Header"
 import Carousel from 'react-bootstrap/Carousel';
+import { useNavigate } from "react-router-dom";
+import routes from '../Routes/routes.json'
 const Home = ()=>{
+
+const navigate = useNavigate()
+
+const addHandler = ()=>{
+  navigate('/login')
+}
+
+  
     return(<>
-   {/* <Header/> */}
+  
         <Carousel>
   <Carousel.Item>
     <img
@@ -51,7 +61,7 @@ const Home = ()=>{
 <br/>
 <div>
 <p>click here ... to add your restaurant.</p>
-<Button className="mb-3 mt-1">Add</Button>
+<Button onClick={addHandler} className="mb-3 mt-1">Add</Button>
 
 
 </div>

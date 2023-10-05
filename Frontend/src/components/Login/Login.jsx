@@ -2,12 +2,16 @@ import React from 'react';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import {Uname} from '../../Reducers/UserSlice'
+import { useDispatch } from 'react-redux';
 const Login =  () =>{
 
 const navigate = useNavigate()
 
+const dispatch = useDispatch()
+
    const [username, setUserName] = useState('')
-  const [password, setPassword] = useState('')
+  const [password, setPassword] = useState('') 
 
   const signupHandler = ()=>{
   navigate('/signup')
@@ -26,6 +30,7 @@ const siginpHandler = ()=>{
             username: `${username1}`,
       password: `${password1}`,
           }).then((data)=>{
+            dispatch(Uname(username1))
            alert(data.data.message)
       navigate('/login')
     }).catch((error)=>{

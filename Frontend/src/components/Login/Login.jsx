@@ -65,12 +65,12 @@ dispatch(Uname(username1))
                  
                     
                     <div className="mb-3">
-                      <label htmlFor="username" className="form-label">Username</label>
+                      <label htmlFor="username" className="form-label">Name</label>
                       <input
                         type="text"
                         className="form-control"
                         id="username"
-                        placeholder="Enter Username"
+                        placeholder="Enter Name"
                         value={username}
                         onChange={(e) => {setUserName(e.target.value)}}
                       />

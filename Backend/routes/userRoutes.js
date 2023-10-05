@@ -1,5 +1,5 @@
 const express = require("express");
-
+const encryptPassword = require("../middleware/passEncryption");
 const router = express.Router();
 const { save, get, edit, deletee } = require("../controller/userCurd");
 
@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
   res.json({ data: data });
 });
 
-router.post("/", async (req, res) => {
+router.post("/", encryptPassword, async (req, res) => {
   let data = await save(req.body);
   res.json({
     message: "Account Created Sucessfully",

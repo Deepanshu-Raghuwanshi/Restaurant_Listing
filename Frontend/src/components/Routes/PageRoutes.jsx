@@ -6,6 +6,7 @@ import Signup from '../Signup/Signup';
 import Login from '../Login/Login';
 import RestaurantList from '../RestaurantList/RestaurantList';
 import ContactUs from '../ContactUs/ContactUs';
+import AddRestaurant from '../AddRestaurant/AddRestaurant';
 
 
 const PageRoutes = () => {
@@ -19,6 +20,7 @@ const PageRoutes = () => {
         <Route path={routes.LOGIN} element={<Login />} />
          <Route path={routes.RESTAURANTLIST} element={<RestaurantList />} />
           <Route path={routes.CONTACTUS} element={<ContactUs />} />
+          <Route path={routes.ADDRESTAURANT} element={<AddRestaurant />} />
         
         
            </Route>

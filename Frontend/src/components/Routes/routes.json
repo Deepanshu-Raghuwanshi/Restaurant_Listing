@@ -4,5 +4,6 @@
   "LOGIN":"login",
   "MOVIES":"movies",
   "RESTAURANTLIST":"restaurantlist",
-  "CONTACTUS":"contactus"
+  "CONTACTUS":"contactus",
+  "ADDRESTAURANT":"addrestaurant"
 }

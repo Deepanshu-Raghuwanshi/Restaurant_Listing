@@ -33,7 +33,7 @@ const siginpHandler = ()=>{
             if(data.data.message=='Sucess login'){
 alert(data.data.message)
 dispatch(Uname(username1))
-  // navigate('/restaurantlist')
+   navigate('/addrestaurant')
             }else{
   
            alert(data.data.message)

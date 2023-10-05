@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  Oname: "",
+  dishes: "",
   Uname: "",
 };
 
@@ -12,9 +12,13 @@ export const UserSlice = createSlice({
     Uname: (state, action) => {
       state.Uname = action.payload;
     },
+    addDish: (state, action) => {
+      console.log("from adddish");
+      state.Uname = action.payload;
+    },
   },
 });
 
-export const { Uname } = UserSlice.actions;
+export const { Uname, addDish } = UserSlice.actions;
 
 export default UserSlice.reducer;

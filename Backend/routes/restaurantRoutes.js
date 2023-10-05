@@ -7,6 +7,7 @@ const {
   edit,
   deletee,
   getDataById,
+  deleteDishesByName,
 } = require("../controller/restaurantCurd");
 
 router.get("/", async (req, res) => {
@@ -35,6 +36,17 @@ router.post("/edit", async (req, res) => {
   res.json({
     message: "sucess",
     data: data1,
+  });
+});
+
+router.post("/deletedish", async (req, res) => {
+  let name = req.body.name;
+  let id = req.body.id;
+  let data = await deleteDishesByName(id, name);
+
+  res.json({
+    message: "sucess",
+    data: data,
   });
 });
 

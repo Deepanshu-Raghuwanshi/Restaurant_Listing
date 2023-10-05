@@ -29,10 +29,21 @@ const getDataById = (id) => {
     where: { id: id },
   });
 };
+
+const deleteDishesByName = (restaurantId, dishName) => {
+  return restaurants.destroy({
+    where: {
+      id: restaurantId,
+    },
+    "dishes.name": dishName,
+  });
+};
+
 module.exports = {
   save,
   get,
   edit,
   deletee,
   getDataById,
+  deleteDishesByName,
 };

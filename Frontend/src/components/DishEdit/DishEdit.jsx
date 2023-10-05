@@ -84,7 +84,7 @@ alert('Failed Try Again Later')
             id="name"
             name="name"
    
-            value={restaurant.name}
+            value={name}
              onChange={(e)=>{ setName(e.target.value)}}
           />
         </div>
@@ -95,38 +95,14 @@ alert('Failed Try Again Later')
           <input
             type="text"
             className="form-control"
-            id="address"
-            name="address"
-            value={restaurant.address}
+            id="price"
+            name="price"
+            value={price}
             onChange={(e)=>{setAddress(e.target.value)}}
           />
         </div>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            name="email"
-            value={restaurant.email}
-           onChange={(e)=>{setEmail(e.target.value)}}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="mobile" className="form-label">
-            Mobile
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="mobile"
-            name="mobile"
-            value={restaurant.mobile}
-            onChange={(e)=>{setMobile(e.target.value)}}
-          />
-        </div>
+       
+       
         <button onClick={changeHandler} type="submit" className="btn btn-primary">
           Save Changes
         </button>

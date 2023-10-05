@@ -65,7 +65,7 @@ const resHandler = (id)=>{
       <h2>  Listed Restaurant</h2>
       <div className={styles.reslist}>
         {restaurant.map(res => (
-          <div onClick={()=>{resHandler(res.id)}} key={res.id} className={styles.res}>
+          <div  key={res.id} className={styles.res}>
               <h4>Name : {res.name}</h4>
               <hr/>
                <h4>Address : {res.address}</h4>
@@ -76,7 +76,7 @@ const resHandler = (id)=>{
                   <hr/>
             <br/>
                        
-            <img  style={{ maxHeight: "400px" }} src={res.image} alt={res.name} />
+            <img onClick={()=>{resHandler(res.id)}}  style={{ maxHeight: "400px" }} src={res.image} alt={res.name} />
                  <br/>
                    <Button className="me-2 mt-2" onClick={()=>{editHandler(res.id)}} >Edit Restaurant </Button>
               <Button className="mt-2" variant="danger" onClick={()=>{deleteHandler(res.id)}}>Delete Restaurant </Button>                   

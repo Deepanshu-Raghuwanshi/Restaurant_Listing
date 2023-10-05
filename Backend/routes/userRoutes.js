@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   let data = await save(req.body);
   res.json({
-    message: "sucess",
+    message: "Account Created Sucessfully",
     data: data,
   });
 });

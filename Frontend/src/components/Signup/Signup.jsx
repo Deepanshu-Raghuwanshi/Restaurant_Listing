@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from "react";
+import axios from 'axios';
 import styles from './Signup.module.css'
 import routes from '../Routes/routes.json'
 import { useNavigate } from 'react-router-dom';
@@ -18,6 +19,8 @@ const navigate = useNavigate()
  navigate('/login')
   }
 
+  
+
   const signupHandler = () => {
     const name1 = name.trim(' ')
     const username1 = username.trim(' ')
@@ -32,7 +35,28 @@ const navigate = useNavigate()
     } else if (mobile1.length != 10) {
       alert('Enter Valid 10 Digit Mobile Number')
     }
-              
+          
+     const data = {
+      name: name1,
+      username: username1,
+      password: password1,
+      mobile: mobile1,
+    }
+    
+
+ axios.post('http://localhost:8080/user', {
+      name: `${name1}`,
+      username: `${username1}`,
+      password: `${password1}`,
+      mobile: `${mobile1}`,
+    }).then((data)=>{
+     
+      alert(data.data.message)
+      navigate('/login')
+    }).catch((error)=>{
+      console.log(error)
+    })
+
      setName('')
     setUserName('')
     setPassword('')

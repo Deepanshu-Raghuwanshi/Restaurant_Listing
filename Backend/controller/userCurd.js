@@ -1,6 +1,7 @@
 const { user } = require("../models/restaurantModel");
 
 const save = (data) => {
+  console.log("from save");
   return user.create(data);
 };
 

@@ -19,10 +19,14 @@ const restaurants = sequelize.define("restaurant", {
 });
 
 const user = sequelize.define("users", {
-  name: DataTypes.TEXT,
-  username: DataTypes.TEXT,
-  password: DataTypes.TEXT,
-  mobile: DataTypes.INTEGER,
+  // name: DataTypes.TEXT,
+  // username: DataTypes.TEXT,
+  // password: DataTypes.TEXT,
+  // mobile: DataTypes.INTEGER,
+  name: DataTypes.STRING,
+  username: DataTypes.STRING,
+  password: DataTypes.STRING,
+  mobile: DataTypes.STRING,
 });
 
 module.exports = { restaurants, sequelize, user };

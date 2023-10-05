@@ -2,5 +2,7 @@
     "HOME":"/",
   "SIGNUP":"signup",
   "LOGIN":"login",
-  "MOVIES":"movies"
+  "MOVIES":"movies",
+  "RESTAURANTLIST":"restaurantlist",
+  "CONTACTUS":"contactus"
 }

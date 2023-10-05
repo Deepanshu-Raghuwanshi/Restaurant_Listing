@@ -25,17 +25,26 @@ const siginpHandler = ()=>{
       alert('Enter Valid Username')
     } else if (password1.length == 0) {
       alert('Enter Valid Password')
-    } 
-          axios.post('http://localhost:8080/user/login', {
+    } else {
+ axios.post('http://localhost:8080/user/login', {
             username: `${username1}`,
       password: `${password1}`,
           }).then((data)=>{
-            dispatch(Uname(username1))
+            if(data.data.message=='Sucess login'){
+alert(data.data.message)
+dispatch(Uname(username1))
+  // navigate('/restaurantlist')
+            }else{
+  
            alert(data.data.message)
-      navigate('/login')
+    
+            }
+          
     }).catch((error)=>{
       console.log(error)
-    })       
+    }) 
+    }
+               
     setUserName('')
     setPassword('')
     

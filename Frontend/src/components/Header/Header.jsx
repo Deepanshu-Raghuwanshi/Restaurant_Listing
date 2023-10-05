@@ -42,14 +42,14 @@ const logoutHandler = ()=>{
           <Navbar.Brand href="/">Home</Navbar.Brand>
           <Nav className="me-auto">
               <Nav.Link 
-               href="/"
+               href="/restaurantlist"
                className={styles.navlinksmall}>List</Nav.Link>
               <Nav.Link
                 href="/signup"
                 className={styles.navlinksmall} >Signup</Nav.Link>
              
                        <Nav.Link 
-                        href="/"
+                        href="/contactus"
                         className={styles.navlinksmall}>ContactUs</Nav.Link>
             
           </Nav> 
